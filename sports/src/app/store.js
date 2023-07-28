@@ -43,7 +43,17 @@ const removeSport = (sport) => {
   }
 }
 
+const sportsReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'allSports/loadSport': 
+    return {
+      ...state,
+      allSports: action.payload
+    }
 
+  
+
+}
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
