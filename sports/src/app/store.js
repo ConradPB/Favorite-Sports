@@ -22,3 +22,17 @@ const clearSearchTerm = () => {
   }
 };
 
+const loadData = () => {
+  return {
+    type: 'allSports/loadData',
+    payload: allSportsData
+  }
+};
+
+const addSport = (sport) => {
+  return {
+    type: 'favoriteSports/addSport',
+    payload: sport
+  }
+};
+
