@@ -63,8 +63,14 @@ const sportsReducer = (state = initialState, action) => {
         searchTerm: action.payload
     }
 
+    case 'favoriteSports/addSport':
+    return {
+        ...state,
+        favoriteSports: [...state.favoriteSports, action.payload]
+    }
+
     
-    
+  }
   
 
 }
