@@ -7,3 +7,18 @@ const initialState = {
   searchTerm: '',
 };
 
+const setSearchTerm = (term) => {
+  return {
+    type: 'searchTerm/setSearchTerm',
+    payload: term
+
+  }
+
+};
+
+const clearSearchTerm = () => {
+  return {
+  type: 'clearSearchTerm/setClearSearchTerm',
+  }
+};
+
