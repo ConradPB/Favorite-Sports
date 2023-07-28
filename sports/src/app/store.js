@@ -36,3 +36,17 @@ const addSport = (sport) => {
   }
 };
 
+const removeSport = (sport) => {
+  return {
+    type: 'favoriteSports/removeSport',
+    payload: sport
+  }
+}
+
+
+export const store = configureStore({
+  reducer: {
+    counter: counterReducer,
+  },
+});
+
