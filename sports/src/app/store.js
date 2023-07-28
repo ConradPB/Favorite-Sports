@@ -52,11 +52,18 @@ const sportsReducer = (state = initialState, action) => {
     }
 
     case 'searchTerm/clearSearchTerm':
-      return {
+    return {
         ...state,
         searchTerm: ''
-      }
+    }
 
+    case 'searchTerm/setSearchTerm':
+    return {
+        ...state,
+        searchTerm: action.payload
+    }
+
+    
     
   
 
