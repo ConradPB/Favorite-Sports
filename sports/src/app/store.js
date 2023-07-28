@@ -69,7 +69,11 @@ const sportsReducer = (state = initialState, action) => {
         favoriteSports: [...state.favoriteSports, action.payload]
     }
 
-    
+    case 'favoriteSports/removeSport':
+    return {
+        ...state,
+        favoriteSports: state.favoriteSports.filter(e => e.id !== action.payload.id)
+    }
   }
   
 
