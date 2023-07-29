@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import allSportsData from '../data';
 
 const initialState = {
   allSports: [],
@@ -74,13 +74,13 @@ const sportsReducer = (state = initialState, action) => {
         ...state,
         favoriteSports: state.favoriteSports.filter(e => e.id !== action.payload.id)
     }
+
+    default: return state;
   }
   
 
 }
 export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
+  reducer: sportsReducer
 });
 
