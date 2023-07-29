@@ -84,8 +84,19 @@ const favoriteSportsReducer =
   }
 }
 
+const rootReducer = (state = {}, action) => {
+  const nextState = {
+    allSports: allSportsReducer(state.allSports, action),
+
+    searchTerm: searchTermReducer(state.searchTerm, action),
+
+    favoriteSports: favoriteSportsReducer(state.favoriteSports, action)
+  }
+  return nextState
+}
+
 
 export const store = configureStore({
-  reducer: sportsReducer
+  reducer: rootReducer
 });
 
