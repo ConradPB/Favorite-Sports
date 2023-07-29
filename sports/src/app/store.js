@@ -1,11 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import allSportsData from '../data';
 
-const initialState = {
-  allSports: [],
-  favoriteSports: [],
-  searchTerm: '',
-};
+
 
 const setSearchTerm = (term) => {
   return {
@@ -43,43 +39,37 @@ const removeSport = (sport) => {
   }
 }
 
-const sportsReducer = (state = initialState, action) => {
+const initialAllSports = [];
+const allSportsReducer = 
+(allSports = initialAllSports, action) => {
   switch (action.type) {
-    case 'allSports/loadSport': 
-    return {
-      ...state,
-      allSports: action.payload
-    }
+    case 'allSports/loadData':
+      return action.payload
+        default: return allSports;
+
+  }
+}
+
+const initialSearchTerm = '';
+const searchTermReducer = 
+(searchTerm = initialSearchTerm, action) => {
+  switch (action.type) { 
+    case 'searchTerm/setSearchTerm':
+      return action.payload;
 
     case 'searchTerm/clearSearchTerm':
-    return {
-        ...state,
-        searchTerm: ''
-    }
+      return '';
 
-    case 'searchTerm/setSearchTerm':
-    return {
-        ...state,
-        searchTerm: action.payload
-    }
-
-    case 'favoriteSports/addSport':
-    return {
-        ...state,
-        favoriteSports: [...state.favoriteSports, action.payload]
-    }
-
-    case 'favoriteSports/removeSport':
-    return {
-        ...state,
-        favoriteSports: state.favoriteSports.filter(e => e.id !== action.payload.id)
-    }
-
-    default: return state;
-  }
-  
+    default:
+      return searchTerm
 
 }
+}
+
+
+
+const initialFavoriteRecipes = [];
+
 export const store = configureStore({
   reducer: sportsReducer
 });
