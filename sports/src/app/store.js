@@ -66,9 +66,24 @@ const searchTermReducer =
 }
 }
 
+const initialFavoriteSports = [];
+const favoriteSportsReducer = 
+(favoriteSports = initialFavoriteSports, action) => {
+  switch (action.type) {
+    case 'favoriteSports/addSport':
+      return [...favoriteSports, 
+        action.payload];
 
+    case 'favoriteSports/removeSport':
+      return [
+        ...favoriteSports.filter(e => e.id !== action.payload.id)
+      ]
 
-const initialFavoriteRecipes = [];
+        default: return favoriteSports
+
+  }
+}
+
 
 export const store = configureStore({
   reducer: sportsReducer
