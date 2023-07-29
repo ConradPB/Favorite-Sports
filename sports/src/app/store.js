@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import allSportsData from '../data';
 
 
@@ -84,16 +84,13 @@ const favoriteSportsReducer =
   }
 }
 
-const rootReducer = (state = {}, action) => {
-  const nextState = {
-    allSports: allSportsReducer(state.allSports, action),
-
-    searchTerm: searchTermReducer(state.searchTerm, action),
-
-    favoriteSports: favoriteSportsReducer(state.favoriteSports, action)
-  }
-  return nextState
+const reducers = {
+  allSports: allSportsReducer,
+  searchTerm: searchTermReducer,
+  favoriteRecipes: favoriteSportsReducer 
 }
+
+const rootReducer = combineReducers(reducers);
 
 
 export const store = configureStore({
