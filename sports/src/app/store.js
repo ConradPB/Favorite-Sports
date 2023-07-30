@@ -1,22 +1,9 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import allSportsData from '../data';
 import { favoriteSportsReducer } from '../features/favoriteSports/favoriteSportsSlice'
+import { searchTermReducer } from '../features/searchTerm/searchTermSlice'
 
 
-const setSearchTerm = (term) => {
-  return {
-    type: 'searchTerm/setSearchTerm',
-    payload: term
-
-  }
-
-};
-
-const clearSearchTerm = () => {
-  return {
-  type: 'clearSearchTerm/setClearSearchTerm',
-  }
-};
 
 const loadData = () => {
   return {
@@ -36,22 +23,6 @@ const allSportsReducer =
         default: return allSports;
 
   }
-}
-
-const initialSearchTerm = '';
-const searchTermReducer = 
-(searchTerm = initialSearchTerm, action) => {
-  switch (action.type) { 
-    case 'searchTerm/setSearchTerm':
-      return action.payload;
-
-    case 'searchTerm/clearSearchTerm':
-      return '';
-
-    default:
-      return searchTerm
-
-}
 }
 
 
