@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import allSportsData from '../data';
-
+import { favoriteSportsReducer } from '../features/favoriteSports/favoriteSportsSlice'
 
 
 const setSearchTerm = (term) => {
@@ -25,19 +25,7 @@ const loadData = () => {
   }
 };
 
-const addSport = (sport) => {
-  return {
-    type: 'favoriteSports/addSport',
-    payload: sport
-  }
-};
 
-const removeSport = (sport) => {
-  return {
-    type: 'favoriteSports/removeSport',
-    payload: sport
-  }
-}
 
 const initialAllSports = [];
 const allSportsReducer = 
@@ -66,23 +54,7 @@ const searchTermReducer =
 }
 }
 
-const initialFavoriteSports = [];
-const favoriteSportsReducer = 
-(favoriteSports = initialFavoriteSports, action) => {
-  switch (action.type) {
-    case 'favoriteSports/addSport':
-      return [...favoriteSports, 
-        action.payload];
 
-    case 'favoriteSports/removeSport':
-      return [
-        ...favoriteSports.filter(e => e.id !== action.payload.id)
-      ]
-
-        default: return favoriteSports
-
-  }
-}
 
 const reducers = {
   allSports: allSportsReducer,
