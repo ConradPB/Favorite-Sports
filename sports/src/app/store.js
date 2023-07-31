@@ -10,7 +10,7 @@ import { allSportsReducer } from '../features//allSports/allSportsSlice'
 const reducers = {
   allSports: allSportsReducer,
   searchTerm: searchTermReducer,
-  favoriteRecipes: favoriteSportsReducer 
+  favoriteSports: favoriteSportsReducer 
 }
 
 const rootReducer = combineReducers(reducers);
