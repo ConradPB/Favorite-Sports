@@ -1,4 +1,4 @@
-import allSportsData from '../data';
+import allSportsData from "../../data";
 
 export const loadData = () => {
     return {
