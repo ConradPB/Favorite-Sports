@@ -14,7 +14,7 @@ export const removeSport = (sport) => {
 
 
   const initialFavoriteSports = [];
-  const favoriteSportsReducer = 
+  export const favoriteSportsReducer = 
   (favoriteSports = initialFavoriteSports, action) => {
     switch (action.type) {
       case 'favoriteSports/addSport':
