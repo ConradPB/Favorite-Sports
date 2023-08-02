@@ -19,7 +19,10 @@ export function App(props) {
       </section>
       <section>
         <h2>FavoriteSports</h2>
-        
+        <FavoriteSports 
+        favoritesports={visibleFavoriteSports}
+        dispatch={dispatch}
+        />
       </section>
       <hr />
       <section>
