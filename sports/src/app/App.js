@@ -1,7 +1,7 @@
 import React from 'react';
-
 import { AllSports } from '../features/allSports/AllSports';
 import { SearchTerm } from '../features/searchTerm/SearchTerm.js';
+import { FavoriteSports } from '../features/favoriteSports/favoriteSportsSlice'
 
 export function App(props) {
   const {state, dispatch} = props;
