@@ -21,5 +21,14 @@ export const allSportsReducer = (allSports = initialState, action) => {
       return allSports;
   }
 }
+export const selectAllSports = state => state.allSports;
+export const selectFilteredAllSports = state => {
+  const allSports = selectAllSports(state);
+  const searchTerm = selectSearchTerm(state);
+  return allSports.filter(
+    sport => sport.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+}
 
+ 
 
