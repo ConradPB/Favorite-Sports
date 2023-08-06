@@ -1,4 +1,4 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from '@reduxjs/toolkit'
 
 import { favoriteSportsReducer } from '../features/favoriteSports/favoriteSportsSlice'
 import { searchTermReducer } from '../features/searchTerm/searchTermSlice'
