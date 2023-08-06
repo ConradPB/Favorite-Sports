@@ -1,27 +1,21 @@
-const initialState = ''
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-export const searchTermReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case 'searchTerm/setSearchTerm':
-      return action.payload;
-    case 'searchTerm/clearSearchTerm':
-      return '';
-    default:
-      return state;
-  }
+import { setSearchTerm, clearSearchTerm, selectSearchTerm } from './searchTermSlice.js';
+const searchIconUrl = 'https://static-assets.codecademy.com/Courses/Learn-Redux/Recipes-App/icons/search.svg';
+const clearIconUrl = 'https://static-assets.codecademy.com/Courses/Learn-Redux/Recipes-App/icons/clear.svg';
+
+
+export const SearchTerm = () => {
+  const searchTerm = useSelector(selectSearchTerm);
+  const dispatch = useDispatch();
+
+  const onSearchTermChangeHandler = (e) => {
+    const userInput = e.target.value;
+    dispatch(setSearchTerm(userInput));
+  };
+  
+  const onClearSearchTermHandler = () => {
+    dispatch(clearSearchTerm());
+  };
 }
-
-export function setSearchTerm(term) {
-  return {
-    type: 'searchTerm/setSearchTerm',
-    payload: term
-  }
-}
-
-export function clearSearchTerm() {
-  return {
-    type: 'searchTerm/clearSearchTerm'
-  }
-}
-
-export const selectSearchTerm = (state) => state.searchTerm;
