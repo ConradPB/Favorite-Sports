@@ -21,3 +21,5 @@ const options = {
     }
   },
 };
+
+export const favoriteSportsSlice = createSlice(options)
