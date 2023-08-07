@@ -1,32 +1,23 @@
-export const addSport = (sport) => {
-    return {
-      type: 'favoriteSports/addSport',
-      payload: sport
-    }
-  };
-  
-export const removeSport = (sport) => {
-    return {
-      type: 'favoriteSports/removeSport',
-      payload: sport
-    }
-  }
+import { createSlice } from '@reduxjs/toolkit';
+import { selectSearchTerm } from '../searchTerm/searchTermSlice.js';
 
 
-  const initialFavoriteSports = [];
-  export const favoriteSportsReducer = 
-  (favoriteSports = initialFavoriteSports, action) => {
-    switch (action.type) {
-      case 'favoriteSports/addSport':
-        return [...favoriteSports, 
-          action.payload];
-  
-      case 'favoriteSports/removeSport':
-        return [
-          ...favoriteSports.filter(e => e.id !== action.payload.id)
-        ]
-  
-          default: return favoriteSports
-  
+const options = {
+  name: 'favoriteSports',
+  initialState: [],
+  reducers: {
+    addSport: (state, action) => {
+      return [
+        ...state,
+        {
+          id: action.payload.id,
+        }
+      ]
+    },
+    removeSport: (state, action) => {
+    return [
+      ...state.filter(e => e.id !== action.payload.id)
+    ]
     }
-  }
+  },
+};
