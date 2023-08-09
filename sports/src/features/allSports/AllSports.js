@@ -17,7 +17,7 @@ export const AllSports = () => {
   const onFirstRender = () => {
     dispatch(loadData());
   }
-  useEffect(onFirstRender, []);
+  useEffect(onFirstRender, [dispatch]);
   
   const onAddSportHandler = (sport) => {
     dispatch(addSport(sport));

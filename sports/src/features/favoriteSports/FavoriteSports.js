@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { removeSport, selectFilteredFavoriteSports } from './favoriteSportsSlice.js';
-import FavoriteButton from '../../components/FavoriteButton.jsn';
+import FavoriteButton from '../../components/FavoriteButton.js';
 import Sport from '../../components/Sport.js';
 const unfavoriteIconUrl = 'https://static-assets.codecademy.com/Courses/Learn-Redux/Recipes-App/icons/unfavorite.svg';
 
