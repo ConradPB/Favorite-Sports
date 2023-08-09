@@ -25,16 +25,10 @@ export const selectFilteredFavoriteSports = (state) => {
   );
 };
 
-console.log(favoriteSportsSlice.name)
-
-for (const action in favoriteSportsSlice.actions) {
-  console.log(action)
-}
 
 export const {
   addSport,
   removeSport,
 } = favoriteSportsSlice.actions;
 
-console.log(favoriteSportsSlice);
 export default favoriteSportsSlice.reducer
