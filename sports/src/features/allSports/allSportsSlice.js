@@ -30,23 +30,5 @@ export const selectFilteredAllSports = state => {
   )
 }
 
-// testing the selectors.
-const testState = {
-  allSports: allSportsData,
-  searchTerm: 'ch'
-}
 
-const testSelectAllSports = () => {
-  console.log('All Sports')
-  console.log(selectAllSports(testState));
-}
-
-const testSelectFilteredAllSports = () => {
-  console.log('\nSports filtered by searchTerm')
-  console.log(selectFilteredAllSports(testState));
-}
-
-
-testSelectAllSports();
-testSelectFilteredAllSports(); 
-
+export default allSportsReducer;
