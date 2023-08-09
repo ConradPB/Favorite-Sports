@@ -17,3 +17,14 @@ export function setSearchTerm(term) {
     payload: term
   }
 }
+
+
+export function clearSearchTerm() {
+  return {
+    type: 'searchTerm/clearSearchTerm'
+  }
+}
+
+export const selectSearchTerm = (state) => state.searchTerm;
+
+export default searchTermReducer;
